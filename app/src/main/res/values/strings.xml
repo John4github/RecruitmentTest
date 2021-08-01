@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CryptoTest</string>
+
+    <string name="loading">Loading…</string>
+    <string name="no_data">No data, press LOAD button to load.</string>
+    <string name="search_currency_hint">CRYPTOCURRENCY</string>
+    <string name="cd_currency_list">Currency Info List</string>
+    <string name="cd_search_button">Search Button</string>
+    <string name="load">LOAD</string>
+    <string name="sort_button_text">SORT</string>
+</resources>

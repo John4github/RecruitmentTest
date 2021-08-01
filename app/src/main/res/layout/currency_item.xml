@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currencyInfo"
+            type="com.crypto.recruitment.test.db.entity.CurrencyInfo" />
+
+        <variable
+            name="callback"
+            type="com.crypto.recruitment.test.ui.CurrencyClickCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:onClick="@{() ->  callback.onClick(currencyInfo)}"
+        android:background="?selectableItemBackground"
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/letterView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_letter"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{currencyInfo.name.substring(0,1)}"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/nameView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="C" />
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:maxLines="1"
+            android:text="@{currencyInfo.name}"
+            android:textColor="#0B1426"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Crypto.com" />
+
+        <TextView
+            android:id="@+id/descView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/item_horizontal_margin"
+            android:text="@{currencyInfo.symbol}"
+            android:textColor="#626973"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/arrowRightView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="MCO" />
+
+        <ImageView
+            android:id="@+id/arrowRightView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/item_horizontal_margin"
+            android:src="@drawable/ic_arrow_right"
+            tools:ignore="ContentDescription"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="#EBECED"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/nameView"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
